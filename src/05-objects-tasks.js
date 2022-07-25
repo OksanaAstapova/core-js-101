@@ -56,10 +56,9 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-  const from = JSON.parse(json);
-  return new proto.constructor(...from);
+  const val = Object.values(JSON.parse(json));
+  return new proto.constructor(...val);
 }
-
 
 /**
  * Css selectors builder
