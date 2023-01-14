@@ -114,7 +114,7 @@ function fromJSON(proto, json) {
  *  For more examples see unit tests.
  */
 
- class CssSelectorBuilder {
+class CssSelectorBuilder {
   constructor() {
     this.selectors = [];
     this.order = ['element', 'id', 'class', 'attr', 'pseudoClass', 'pseudoElement'];

@@ -28,7 +28,7 @@
  *      .catch((error) => console.log(error.message)) // 'Error: Wrong parameter is passed!
  *                                                    //  Ask her again.';
  */
- function willYouMarryMe(isPositiveAnswer) {
+function willYouMarryMe(isPositiveAnswer) {
   return new Promise((resolve, reject) => {
     if (isPositiveAnswer) {
       resolve('Hooray!!! She said "Yes"!');
@@ -56,7 +56,7 @@
  *    })
  *
  */
- function processAllPromises(array) {
+function processAllPromises(array) {
   return Promise.all(array);
 }
 
@@ -80,7 +80,7 @@
  *    })
  *
  */
- function getFastestPromise(array) {
+function getFastestPromise(array) {
   return Promise.race(array);
 }
 
@@ -101,7 +101,7 @@
  *    });
  *
  */
- function chainPromises(array, action) {
+function chainPromises(array, action) {
   return array.reduce(async (prev, item) => {
     const a = await prev.catch(() => {});
     const b = await item.catch(() => {});
