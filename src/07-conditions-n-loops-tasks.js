@@ -274,14 +274,15 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function getDigitalRoot(num) {
-  const numArr = num.toString().split('').map((el) => +el);
-  const sum = numArr.reduce((acc, el) => acc + el);
-  if (sum <= 9) {
-    return sum;
-  }
-  return getDigitalRoot(sum);
+function isCreditCardNumber(ccn) {
+  const arr = ccn.toString().split('').reverse().map((x) => +x);
+  const last = arr.splice(0, 1);
+  let sum = arr.reduceRight((acc, v, i) => (i % 2 !== 0 ? acc + v : acc
+    + ((v * 2) > 9 ? (v * 2) - 9 : v * 2)), 0);
+  sum += +last;
+  return sum % 10 === 0;
 }
+
 
 
 /**
