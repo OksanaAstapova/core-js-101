@@ -191,8 +191,6 @@ function findFirstSingleChar(str) {
   return null;
 }
 
-
-
 /**
  * Returns the string representation of math interval,
  * specified by two points and include / exclude flags.
@@ -283,8 +281,6 @@ function isCreditCardNumber(ccn) {
   return sum % 10 === 0;
 }
 
-
-
 /**
  * Returns the digital root of integer:
  *   step1 : find sum of all digits
@@ -307,8 +303,6 @@ function getDigitalRoot(num) {
   }
   return getDigitalRoot(sum);
 }
-
-
 
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
