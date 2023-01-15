@@ -462,10 +462,20 @@ function getMatrixProduct(m1, m2) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(/* position */) {
-  throw new Error('Not implemented');
+function evaluateTicTacToePosition(position) {
+  function isWinner(field, symbol) {
+    if (field[0][0] === symbol && field[0][1] === symbol && field[0][2] === symbol) return symbol;
+    if (field[1][0] === symbol && field[1][1] === symbol && field[1][2] === symbol) return symbol;
+    if (field[2][0] === symbol && field[2][1] === symbol && field[2][2] === symbol) return symbol;
+    if (field[0][0] === symbol && field[1][0] === symbol && field[2][0] === symbol) return symbol;
+    if (field[0][1] === symbol && field[1][1] === symbol && field[2][1] === symbol) return symbol;
+    if (field[0][2] === symbol && field[1][2] === symbol && field[2][2] === symbol) return symbol;
+    if (field[0][0] === symbol && field[1][1] === symbol && field[2][2] === symbol) return symbol;
+    if (field[0][2] === symbol && field[1][1] === symbol && field[2][0] === symbol) return symbol;
+    return undefined;
+  }
+  return isWinner(position, 'X') || isWinner(position, '0');
 }
-
 
 module.exports = {
   getFizzBuzz,
